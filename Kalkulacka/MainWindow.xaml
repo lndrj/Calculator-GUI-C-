@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kalkulacka"
         mc:Ignorable="d"
-        Title="Kalkulačka" Height="400" Width="400">
+        Title="Kalkulačka" Height="450" Width="400">
     <Grid Background="#f0f0f0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
