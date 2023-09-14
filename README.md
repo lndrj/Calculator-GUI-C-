@@ -1,5 +1,5 @@
 # Calculator-GUI-C-
 OOP kalkulačka s GUI v C#
 
-Zkombinování OOP s GUI v C#, pravděpodobně zatím Windows Forms.
-Proteď pouze OOP funkce pro výpočet.
+Kalkulačka s GUI skrze WPF framework,
+ještě bude upravena aby vypadala jako normální kalkulačka - tlačítka pro čísla, operace,...
