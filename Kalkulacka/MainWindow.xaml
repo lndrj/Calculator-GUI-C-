@@ -5,41 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kalkulacka"
         mc:Ignorable="d"
-        Title="Kalkulačka" Height="450" Width="400">
-    <Grid Background="#f0f0f0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        Title="Kalkulačka" Height="500" Width="330">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+    
+            <!-- Zobrazení aktuálního vstupu -->
+            <TextBox x:Name="inputTextBox" Grid.Row="0" Height="50" FontSize="32" TextAlignment="Right" Margin="10,10,10,5" Text="{Binding CurrentInput}" />
+    
+            <!-- Tlačítka pro čísla -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <Button Content="7" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="7" Click="NumberButton_Click"/>
+                <Button Content="8" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="8" Click="NumberButton_Click"/>
+                <Button Content="9" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="9" Click="NumberButton_Click"/>
+                <Button Content="+" Width="75" Height="75" FontSize="24" Command="{Binding OperatorButtonCommand}" CommandParameter="+" Click="OperatorButton_Click"/>
 
-        <!-- Nadpis pro první číslo -->
-        <Label Content="První číslo:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="0" Foreground="#333" FontSize="16"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center"  Margin="5">
+                <Button Content="4" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="4" Click="NumberButton_Click"/>
+                <Button Content="5" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="5" Click="NumberButton_Click"/>
+                <Button Content="6" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="6" Click="NumberButton_Click"/>
+                <Button Content="-" Width="75" Height="75" FontSize="24" Command="{Binding OperatorButtonCommand}" CommandParameter="-" Click="OperatorButton_Click" />
+            </StackPanel>
 
-        <!-- Vstupní pole pro první číslo -->
-        <TextBox x:Name="firstNumberTextBox" HorizontalAlignment="Stretch" Margin="10" Background="#eee" BorderBrush="#ccc"  TextAlignment="Left" Grid.Row="1" />
-
-        <!-- Nadpis pro operátor -->
-        <Label Content="Operátor (+,-,*,/):" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="2" Foreground="#333" FontSize="16"/>
-
-        <!-- Vstupní pole pro operátor -->
-        <TextBox x:Name="operatorTextBox" HorizontalAlignment="Stretch" Margin="10" Background="#eee" BorderBrush="#ccc" TextAlignment="Left" Grid.Row="3" />
-
-        <!-- Nadpis pro druhé číslo -->
-        <Label Content="Druhé číslo:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="4" Foreground="#333" FontSize="16"/>
-
-        <!-- Vstupní pole pro druhé číslo -->
-        <TextBox x:Name="secondNumberTextBox" HorizontalAlignment="Stretch" Margin="10" Background="#eee" BorderBrush="#ccc" TextAlignment="Left" Grid.Row="5" />
-
-        <!-- Tlačítko pro provádění výpočtu vycentrované vertikálně -->
-        <Button Content="=" Width="200" Height="50" VerticalAlignment="Center" Margin="10" Background="#007acc" Foreground="White" FontSize="18" Click="Calculate_Click" Grid.Row="6" />
-
-        <!-- Výsledek výpočtu -->
-        <TextBlock x:Name="resultTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Grid.Row="7" Foreground="#007acc" Text="Výsledek: " />
-    </Grid>
+            
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="5">
+                <Button Content="1" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="1" Click="NumberButton_Click"/>
+                <Button Content="2" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="2" Click="NumberButton_Click"/>
+                <Button Content="3" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="3" Click="NumberButton_Click"/>
+                <Button Content="*" Width="75" Height="75" FontSize="24" Command="{Binding OperatorButtonCommand}" CommandParameter="*" Click="OperatorButton_Click" />
+            </StackPanel>
+            
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="5">
+                <Button Content="0" Width="155" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="0" Click="NumberButton_Click" />
+                <Button Content="." Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Command="{Binding NumberButtonCommand}" CommandParameter="." Click="NumberButton_Click" />
+                <Button Content="/" Width="75" Height="75" FontSize="24" Command="{Binding OperatorButtonCommand}" CommandParameter="/" Click="OperatorButton_Click"/>
+            </StackPanel>
+            
+    
+            <!-- Tlačítko pro výpočet -->
+            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="=" Width="150" Height="75" FontSize="24" Margin="5" Command="{Binding CalculateCommand}" Click="Calculate_Click" />
+                <Button Content="←" Width="75" Height="75" FontSize="24" Margin="0,0,5,0" Click="DeleteButton_Click" />
+            </StackPanel>
+            
+    
+        </Grid>
 </Window>

@@ -18,3 +18,5 @@ C:\Users\Rark1\RiderProjects\Kalkulacka\Kalkulacka\obj\Debug\net7.0-windows\refi
 C:\Users\Rark1\RiderProjects\Kalkulacka\Kalkulacka\obj\Debug\net7.0-windows\Kalkulacka.pdb
 C:\Users\Rark1\RiderProjects\Kalkulacka\Kalkulacka\obj\Debug\net7.0-windows\Kalkulacka.genruntimeconfig.cache
 C:\Users\Rark1\RiderProjects\Kalkulacka\Kalkulacka\obj\Debug\net7.0-windows\ref\Kalkulacka.dll
+C:\Users\Rark1\RiderProjects\Kalkulacka\Kalkulacka\obj\Debug\net7.0-windows\Resources.baml
+C:\Users\Rark1\RiderProjects\Kalkulacka\Kalkulacka\obj\Debug\net7.0-windows\App.baml
